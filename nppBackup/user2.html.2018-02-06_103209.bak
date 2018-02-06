@@ -1,0 +1,36 @@
+ <html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles/interface.css" />
+		<script src="api/translation.js"></script>
+		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="jquery-3.1.1.min.js"></script>
+		<style type="text/css">body{overflow-y: hidden;}</style>
+	</head>
+
+  <center>
+        <center>
+		<div id='from'>
+			<label id='fromLabel'>User 1 Language: </label>
+			<input class='showLanguage' id='fromLang' type='text'  placeholder="Detected automatically!"disabled/>
+		</div>
+		
+		<div id='to'>
+			<label id='toLabel'>Choose User 2's Language: </label>
+			<select class='showLanguage' id='toLanguageSelect' onchange='translate()'></select>
+		</div>
+		
+		<br><br>
+		<section id="presentation-primary">
+			<label class='helpText' id='languageAvailableText'>  </label>
+			<br/>
+			<textarea class="toBeTranslated" id="srcTextArea" cols="40" rows="5" onkeyup='detect()' onchange='detect()' onmouseover='detect()' placeholder="Type a message here."></textarea>
+		</section>	
+		<section id="presentation-secondary">
+			<textarea class="translated" id="destTextArea" cols="40" rows="5" placeholder="See translated message here." disabled></textarea>
+        </section>	
+		<section id="presentation-middle">
+        <input id='translateButton' type='button' value='Translate' onClick="translate()"/>
+		</section>
+		</center>
+		</html>

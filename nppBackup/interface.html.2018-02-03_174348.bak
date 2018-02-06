@@ -1,0 +1,310 @@
+<html>
+ <title>Student Dashboard</title>
+ <meta charset="UTF-8">
+ <head>
+ <!-- W3 CSS -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link href="../css/bootstrap.min.css" rel="stylesheet">
+     <!-- Custom CSS -->
+ <link href="../css/sb-admin.css" type="text/css"  rel="stylesheet">
+ <link href="../css/main.css" type="text/css"  rel="stylesheet">
+ <link rel="stylesheet" type="text/css" href="/modules/core/client/css/core.css">
+ <link href="../css/bootstrap.css" type="text/css"  rel="stylesheet">
+ <link href="../css/bootstrap-rtl.css" type="text/css"  rel="stylesheet">
+ <link href="../css/sb-admin-rlt.css" type="text/css"  rel="stylesheet">
+ <link href="../css/bootstrap-rtl.min.css" type="text/css"  rel="stylesheet">
+     <!-- Morris Charts CSS -->
+ <link href="../css/plugins/morris.css" rel="stylesheet">
+     <!-- Custom Fonts -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+ 
+ <style>
+ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+ .w3-sidebar {
+   z-index: 3;
+   width: 250px;
+   top: 43px;
+   bottom: 0;
+   height: inherit;
+ }
+ u {
+     text-decoration: none;
+     /*border-bottom: 2px solid white;*/
+ }
+ .opaque {
+   opacity: 0.75;
+ }
+ .padder {
+   padding: 15px;
+ }
+ .huge {
+   font-size: 25px;
+ }
+ img.red-hover:hover {
+   opacity: 0.95;
+   border: 1px solid gray;
+ }
+ img.green-hover:hover {
+   opacity: 0.7;
+   border: 1px solid gray;
+ }
+ </style>
+ </head>
+ 
+ <!---
+ <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+ <div class="w3-main"  style="margin-left:250px">
+   <div class="w3-row w3-padding-64">
+     <div class="w3-twothird w3-container">
+       <h1 class="w3-text-teal">Welcome, </h1>
+       <p>Here are your to-do's:</p>
+       <input type="file" id = "myFile"/>
+       <button ng-click = "uploadFile()"> Test </button>
+       <button ng-click = "checkAppStatus()">Testing appStatus function </button> -->
+  
+  
+  <body>
+ 
+ 
+    <!--  <div class="container-fluid" ng-controller="HeaderController as vm" data-ng-init = 'testUser()'> -->
+        <div class="container-fluid" ng-controller="StudentsController" data-ng-init = 'checkAppStatus2()'>
+        
+ 
+        <!-- Page Heading -->
+        <!-- <div class="row"> -->
+        <div style="background-color:#003d66 ; color:white; padding:25px; margin-bottom: 0; margin-left: calc(50% - 50vw); width:100vw;" class="container">
+          <!-- <h1 class ="col-lg-4" style="margin-left:10vw"> -->
+          <h1>
+          <!-- <h1 class ="col-lg-8"> -->
+         <div ng-controller = "HeaderController as vm" >
+          <center>
+            <ul><u>Welcome to Translator Gator </ul></u>
+          </center>
+       </div>
+            <!-- Dashboard <small>student</small> -->
+          </h1>
+        </div>
+       <!-- </div> -->
+       <!-- /.row -->
+ 
+       <div class="row padder">
+         <div class="col-lg-14">
+           <div class="">
+               <center>
+                 <h2 <strong>To Do:</strong> </h2>
+               </center>
+           </div>
+         </div>
+       </div>
+  
+            <!--- TO DOS -->
+        <div class="row" style= "margin-left: 0em; margin-right: 0em; margin-bottom: 15px;">
+
+ 
+    
+          <div ng-switch = "student.isAppComplete">
+            <!--  <div ng-switch-when="true"> -->
+ 
+              <!-- green block -->
+     
+          <div ng-switch-when = 'true'>    
+                <div class="col-lg-4 ">
+                  <div class="panel panel-green">
+                    <div class="panel-heading">
+                      <div class="row">
+                        <div class="text-center">
+                          <center>
+                          <div class="huge">Application</div>
+
+ 
+                         </center>
+                        
+ 
+                        </div>
+                      </div>
+                    </div>
+                    <a href="studentapp">
+                      <div class="panel-footer">
+                        <center>
+                          <img class ="opaque green-hover" src="/modules/volunteers/client/img/app.JPG" style= "margin:auto; width:16em; height: 12em;" alt="application">
+                        
+                        </center>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+ 
+ 
+            <div ng-switch-default>
+              <!-- red block -->
+              <div class="col-lg-4 ">
+               <div class="panel panel-red">
+                 <div class="panel-heading">
+                   <div class="row">
+                      <div class="text-center">
+                        <center>
+                          <div class="huge">Application</div>
+
+ 
+                       </center>
+                       
+ 
+                      </div>
+                    </div>
+                  </div>
+                  <a href="studentapplication">
+                  <div class="panel-footer">
+                    <center>
+                      <img class="red-hover" src="/modules/volunteers/client/img/app.JPG" style= "margin:auto; width:16em; height: 12em;" alt="application">
+                     
+                    </center>
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+        <div ng-model="myVar2" ng-init="myVar2 = false">
+          <div ng-switch on="myVar2">
+            <div ng-switch-when="true">
+           <!-- green block -->
+             <div class="col-lg-4 ">
+               <div class="panel panel-green">
+                 <div class="panel-heading">
+                   <div class="row">
+                     <div class="text-center">
+                       <center>
+                       <div class="huge">Forms</div>
+                       </center>
+                       
+                     </div>
+                   </div>
+                 </div>
+                 <a href="studentforms">
+                   <div class="panel-footer">
+                     <center>
+                       <img class ="opaque green-hover" src="/modules/volunteers/client/img/form.JPG" style= "margin:auto; width:16em; height: 12em;" alt="forms">
+                     </center>
+                   </div>
+                 </a>
+               </div>
+             </div>
+           </div>
+          <div ng-switch-default>
+            <!-- red block -->
+            <div class="col-lg-4 ">
+
+             <div class="panel panel-green">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="text-center">
+                     <center>
+                       <div class="huge">Forms</div>
+                     </center>
+                     
+                   </div>
+                 </div>
+               </div>
+               <a href="studentforms">
+               <div class="panel-footer">
+                 <center>
+                   <img class="red-hover" src="/modules/volunteers/client/img/form.JPG" style= "margin:auto; width:16em; height: 12em;" alt="application">
+                 </center>
+               </div>
+               </a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+ 
+     <div ng-model="myVar3" ng-init="myVar3 = true">
+       <div ng-switch on="myVar3">
+         <div ng-switch-when="true">
+         <!-- green block -->
+           <div class="col-lg-4 ">
+             <div class="panel panel-green">
+               <div class="panel-heading">
+                 <div class="row">
+                   <div class="text-center">
+                     <center>
+                     <div class="huge">Recommendation</div>
+                     </center>
+                    
+                   </div>
+                 </div>
+               </div>
+               <a href="studentrecommendation">
+                 <div class="panel-footer">
+                   <center>
+                     <img class ="opaque green-hover" src="/modules/volunteers/client/img/rec.JPG" style= "margin:auto; width:16em; height: 12em;" alt="forms">
+                   </center>
+                 </div>
+               </a>
+             </div>
+           </div>
+         </div>
+        <div ng-switch-default>
+          <!-- red block -->
+          <div class="col-lg-4 ">
+
+           <div class="panel panel-green">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="text-center">
+                   <center>
+                     <div class="huge">Recommendation</div>
+                   </center>
+                 
+                 </div>
+               </div>
+             </div>
+             <a href="studentrecommendation">
+               <div class="panel-footer">
+               <center>
+                 <img class="red-hover" src="/modules/volunteers/client/img/rec.JPG" style= "margin:auto; width:16em; height: 12em;" alt="application">
+               </center>
+               </div>
+             </a>
+           </div>
+         </div>
+       </div>
+ 
+     </div>
+   </div>
+ </div>
+       <div class="col-lg-12">
+         <div class="panel panel-default">
+           <div class="panel-heading">
+             <h3 class="panel-title"><i class=""></i> <b>Upcoming Events</b></h3>
+           </div>
+           <div class="panel-body">
+             <div class="list-group">
+               <div class="w3-container">
+ 
+               <div ng-model="events" ng-init="events = false">
+                 <div ng-switch on="events">
+                   <div ng-switch-when="false">
+                       <h5> There are no upcoming events at this time. </h5>
+                   </div>
+                   <div ng-switch-default>
+                     <!-- foreach event display -->
+                   </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+ 
+ <script src="js/jquery.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ 
+ </body>
+ </html>

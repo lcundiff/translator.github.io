@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<!-- key: 9e99fa58cb744cc6b47f9081829f025b -->
+	<!-- API endpoint: https://api.cognitive.microsoft.com/sts/v1.0 -->
+  <head>
+    <meta charset="utf-8">
+    <title>HCI	</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <!-- <img src=""> -->
+        <div class="logo-img">
+          <div>
+            <img src="img/dofm_logo.png" alt="" width="100" height="100">
+          </div>
+        </div>
+        <div class="logo-text">
+          <h1>Translator Gator</h1>
+          <h2>A student Translating App</h2>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="presentation.html">Translate</a></li>
+          <li><a href="members.html" class="selected">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="members-wrapper">
+      <section>
+      <h1>Interface Designer</h1>
+        <p>I build this app</p>
+
+        <ul>
+          <li>
+            <h3>Logan Cundiff</h3>
+            <img src="img/logan.jpg" alt="" class="member-photo">
+            <p>
+              I am a 4th year Digital Arts and Sciences Engineering Major with a minor in Electrical Engineering </br>
+              I am running a marathon next week (or die trying)
+            </p>
+          </li>
+          <li>
+
+      </section>
+
+      <footer>
+        <p>&copy; 2018 Translator Gator</p>
+      </footer>
+    </div>
+  </body>
+</html>

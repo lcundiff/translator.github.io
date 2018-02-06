@@ -1,0 +1,54 @@
+<html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HCI</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="jquery-3.1.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+  
+  </head>
+
+    <body>
+    <header>
+      <a href="index.html" id="logo">
+        <!-- <img src=""> -->
+        <div class="logo-img">
+          <div>
+            <img src="img/gator2.png" alt="" width="90" height="90">
+          </div>
+        </div>
+        <div class="logo-text">
+          <h1>Translator Gator</h1>
+          <h2>Helping Students Communicate</h2>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="presentation.html" class="selected">Translate</a></li>
+          <li><a href="members.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+	</head>
+
+	<body>
+    <br>
+    	<center><img src="logo.png" width="500" height="169" alt="Campus Communicator Logo">
+        <br><br>
+    <hr id='hline'/>
+    <br>
+    
+    <table width="60%" border="0" align="center">
+</table>
+
+</html>
+

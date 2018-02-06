@@ -1,0 +1,265 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles/interface.css" />
+	<script src="api/translation.js"></script>
+
+    <!-- CSS for Map API -->
+		    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 45%;
+        width: 45%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 15px 0 13px;
+        text-overflow: ellipsis;
+        width: 500px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+      iframe {
+	border: 0;
+	overflow-y: hidden;
+	width: 100%;
+	height: 275px;
+	margin: 0 11px 0 13px;
+	left: auto;
+      }
+            </style>
+        
+        <title>Campus Communicator</title>
+	</head>
+
+	<body>
+    <br>
+    	<center><img src="logo.png" width="500" height="169" alt="Campus Communicator Logo">
+        <br><br>
+    <hr id='hline'/>
+    <br>
+    
+    <table width="60%" border="0" align="center">
+  <tr>
+    <td width="8%"><img src="step1i.png" width="70" height="50" alt="Person A Icon"></td>
+    <td width="92%"><img src="step1t.png" width="658" height="30" alt="Type a message to a friend and have it translated into a friend's language!"></td>
+  </tr>
+</table>
+
+        
+   	<!-- Person A -->
+        <center>
+		<div id='from'>
+			<label id='fromLabel'>Your Language: </label>
+			<input class='showLanguage' id='fromLang' type='text'  placeholder="Detected automatically!"disabled/>
+		</div>
+		
+		<div id='to'>
+			<label id='toLabel'>Choose Friend's Language: </label>
+			<select class='showLanguage' id='toLanguageSelect' onchange='translate()'></select>
+		</div>
+		
+		<br />
+		
+		<label class='helpText' id='languageAvailableText'>  </label>
+		<br/>
+		<textarea class="toBeTranslated" id="srcTextArea" cols="40" rows="5" onkeyup='detect()' onchange='detect()' onmouseover='detect()' placeholder="Type a message here."></textarea>
+		<textarea class="translated" id="destTextArea" cols="40" rows="5" placeholder="See translated message here." disabled></textarea>
+        
+        <br>
+        <input id='translateButton' type='button' value='Translate' onClick="translate()"/>
+		</center>
+        <!-- End of Person A -->
+            <br><br>
+    
+    <table width="60%" border="0" align="center">
+  <tr>
+    <td><img src="step2i.png" width="70" height="50" alt="Person B Icon"></td>
+    <td><img src="step2t.png" width="664" height="30" alt="Have a friend type a message here and have it translated back to you!"></td>
+  </tr>
+</table>
+    <!--<br/><br />
+        <hr id='hline'/>
+        <br /> -->
+        
+    <!-- Person B -->
+    <iframe src="personB.html" scrolling="no" align="middle"></iframe>
+		<!-- End of Person B -->
+
+		<br><br>
+		<br>
+    
+    <table width="60%" border="0" align="center">
+  <tr>
+    <td width="8%"><img src="step3i.png" alt="Map Icon" height="50"></td>
+    <td width="92%"><img src="step3t.png" width="792" height="30" alt="Use the map to search for a location!"></td>
+  </tr>
+</table>
+        
+    <!-- Begin Map -->
+		<br>
+		<br>
+
+	<input id="pac-input" class="controls" type="text" placeholder="Need to find a location? Type it here!">
+    	<center><div id="map" align="center"></div></center>
+        
+        
+        <br><br>
+        <hr id='hline'/>
+        <br><br>
+    <input id='surveyButton' type="button" onClick="location.href='http://google.com';" value="Continue to Survey" />
+
+    <br><br>
+    <script>
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 29.644551, lng: -82.355356},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaOjnHICnUmw7NGSlKho6HKUgQSS4hhbg&libraries=places&callback=initAutocomplete"
+         async defer></script>  
+		
+        
+        <!-- End of Person B -->
+	</body>
+</html>
+

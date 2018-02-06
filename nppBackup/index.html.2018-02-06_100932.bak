@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<!-- Google API key: AIzaSyDdrLUvoVqG8S2vtMg-Xj6GCuZTHipgKG0 -->
+  <head>
+    <meta charset="utf-8">
+    <title>HCI</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>	
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <!-- <img src=""> -->
+        <div class="logo-img">
+          <div>
+            <img src="img/gator2.png" alt="" width="90" height="90">
+          </div>
+        </div>
+        <div class="logo-text">
+          <h1>Translator Gator</h1>
+          <h2>Helping Students Communicate</h2>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="selected">HOME</a></li>
+          <li><a href="presentation.html">Translate</a></li>
+          <li><a href="members.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="home-wrapper">
+      <div class="home-wrapper-header">
+        <h1>Translator App Home</h1>
+      </div>
+      <div class="home-wrapper-content">
+        <p> <center>
+			Get directions here
+		</p>
+		<span style="font-weight:bold; ">Map of UF</span>
+		<div id="map" style="width:1080px;height:480px;background:blue"></div>
+
+		<script>
+		function myMap() {
+		        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+		}
+		</script>
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdrLUvoVqG8S2vtMg-Xj6GCuZTHipgKG0&libraries=places&callback=myMap"></script>
+
+		</center>
+		<html>
+<!-- 		
+<form action="welcome.php" method="get">
+word to translate: <input type="text" name="name"><br>
+<input type="submit">					
+</form>
+-->
+        <img src="img/summary.jpg" alt="">
+      </div>
+      <footer>
+        <p>&copy; 2018 Translator Gator</p>
+      </footer>
+    </div>
+  </body>
+</html>

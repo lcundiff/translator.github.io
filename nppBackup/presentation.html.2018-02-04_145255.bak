@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HCI</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="jquery-3.1.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <!-- <img src=""> -->
+        <div class="logo-img">
+          <div>
+            <img src="img/dofm_logo.png" alt="" width="100" height="100">
+          </div>
+        </div>
+        <div class="logo-text">
+          <h1>Translator Gator</h1>
+          <h2>Helping Students Communicate</h2>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="presentation.html" class="selected">Translate</a></li>
+          <li><a href="members.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <body>
+
+<div id="contact-form">
+	<div>
+		<h1>Translator Tool</h1>
+    <h2>Conversational tool to allow users that speak different languages to interact.</h2>
+    <h3><h3/>
+		<h4>Logan Cundiff</h4> 
+	</div>
+		<p id="failure">Oopsie...message not sent.</p>  
+		<p id="success">Your message was sent successfully. Thank you!</p>
+
+		   <form method="post" action="/">
+			<div>
+		      <label for="name1">
+		      	<span class="text">Message coming from: </span> 
+		      	<input type="text" id="name1" name="name1" value="" placeholder="First User's Name" tabindex="1" autofocus="autofocus" />
+		      </label> 
+			</div>
+      <div>             
+          <label for="lang1">
+          <span>In what language?</span>
+            <select id="lang1">   
+              <option value="ar">Arabic</option>
+              <option value="cs">Czech</option>
+              <option value="de">German</option>
+              <option value="en">English</option>
+              <option value="et">Estonian</option>
+              <option value="fi">Finnish</option>
+              <option value="fr">French</option>
+              <option value="nl">Dutch</option>
+              <option value="el">Greek</option>
+              <option value="he">Hebrew</option>
+              <option value="ht">Haitian Creole</option>
+              <option value="hu">Hungarian</option>
+              <option value="id">Indonesian</option>
+              <option value="it">Italian</option>
+              <option value="ja">Japanese</option>
+              <option value="lv">Latvian</option>
+              <option value="no">Norwegian</option>
+              <option value="pl">Polish</option>
+              <option value="pt">Portuguesse</option>
+              <option value="ro">Romanian</option>
+              <option value="es">Spanish</option>
+              <option value="ru">Russian</option>
+              <option value="sk">Slovak</option>
+              <option value="sv">Swedish</option>
+              <option value="th">Thai</option>
+              <option value="tr">Turkish</option>
+              <option value="uk">Ukrainian</option>
+              <option value="vi">Vietnamese</option>
+              <option value="zh-CHS">Simplified Chinese</option>
+              <option value="zh-CHT">Traditional Chinese</option>
+            </select>
+          </label>
+      </div>
+      <div>             
+          <label for="message">
+            <span>Message: </span> 
+            <textarea id="message" name="message" placeholder="Please write your message here." tabindex="5"></textarea> 
+          </label>  
+      </div>
+      <div>
+        <text>If an alternative keyboard is needed for input please go <button><a href="http://gate2home.com/" target="_blank">here</a></button> and copy your input, then paste it here in the message area.</text> 
+      </div>
+      <p></p>
+      <div>
+          <label for="name2">
+            <span class="text">Message being translated for: </span> 
+            <input type="text" id="name2" name="name2" value="" placeholder="Second User's Name" tabindex="1" autofocus="autofocus" />
+          </label> 
+      </div>
+      <div>             
+          <label for="lang2">
+          <span>Into what language?</span>
+            <select id="lang2">   
+              <option value="ar">Arabic</option>
+              <option value="cs">Czech</option>
+              <option value="de">German</option>
+              <option value="en">English</option>
+              <option value="et">Estonian</option>
+              <option value="fi">Finnish</option>
+              <option value="fr">French</option>
+              <option value="nl">Dutch</option>
+              <option value="el">Greek</option>
+              <option value="he">Hebrew</option>
+              <option value="ht">Haitian Creole</option>
+              <option value="hu">Hungarian</option>
+              <option value="id">Indonesian</option>
+              <option value="it">Italian</option>
+              <option value="ja">Japanese</option>
+              <option value="lv">Latvian</option>
+              <option value="no">Norwegian</option>
+              <option value="pl">Polish</option>
+              <option value="pt">Portuguesse</option>
+              <option value="ro">Romanian</option>
+              <option value="es">Spanish</option>
+              <option value="ru">Russian</option>
+              <option value="sk">Slovak</option>
+              <option value="sv">Swedish</option>
+              <option value="th">Thai</option>
+              <option value="tr">Turkish</option>
+              <option value="uk">Ukrainian</option>
+              <option value="vi">Vietnamese</option>
+              <option value="zh-CHS">Simplified Chinese</option>
+              <option value="zh-CHT">Traditional Chinese</option>
+            </select>
+          </label>
+      </div>
+      <p></p>
+      <div>
+        <text>When pressing the "Add Message" button, the page will flip and the only action necessary is for the next user to enter their message.</text> 
+      </div>
+      <p></p>
+			<div>		           
+		      <button color="fcff60" name="submit" type="submit" id="submit">ADD MESSAGE</button> 
+			</div>
+      <p></p>
+		  </form>
+
+      <div class="container" id="translation-wrapper" style="margin-top:15px;">
+        <h3>Conversation: </h3>
+      </div>
+      <p></p>
+      <div>              
+          <a href="https://ufl.qualtrics.com/SE/?SID=SV_eW3gInqOUcSzB8V"><button type="submit">COMPLETE INTERACTION</button></a>
+      </div>
+	</div>
+  <script src="https://www.microsoftTranslator.com/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**" type="text/javascript"></script>
+    <script type="text/javascript">
+      $('#submit').on('click touchstart', function(){
+        var lang1 = $('#lang1').val().toString();
+        var firstLang = $('#lang1').find(":selected").text();
+        var lang2 = $('#lang2').val().toString();
+        var secondLang = $('#lang2').find(":selected").text();
+        var name1 = $('#name1').val().toString();
+        var name2 = $('#name2').val().toString();
+        $('#translation-wrapper').append('<p>'+ name1 + ': ' + '</p><p class="translation"></p');
+        $('.translation:last-child').text($('#message').val());
+        Microsoft.Translator.Widget.Translate(lang1, lang2);
+        Microsoft.Translator.Widget.domTranslator.showHighlight = false;
+        Microsoft.Translator.Widget.domTranslator.showTooltips = false;
+        $('#lang1').val(lang2);
+        $('#lang2').val(lang1);
+        $('#name1').val(name2);
+        $('#name2').val(name1);
+        $('#message').val("");
+      return false;
+      });
+  </script>
+  <style>
+  #WidgetFloaterPanels {
+    left: 0 !Important;
+    display: none !important;
+	<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+</style>
+  }
+  </style>
+	        <div class="presentation-wrapper-content">
+        <section id="presentation-primary">
+          <h2 id="presentation-title">Output 1</h2>
+          <ul>
+			<form><textarea rows="8" cols="70" type="text" ng-model='class_description' style="width:35vw"></textarea></form>
+          </ul>
+        </section>
+        <section id="presentation-secondary">
+          <h2  id="script-title">Output 2</h2>
+          <ul>
+			<form><textarea rows="8" cols="70" type="text" ng-model='class_description' style="width:35vw"></textarea></form> 	
+          </ul>
+        </section>
+      </div>
+	  
+      <footer>
+        <p>&copy; 2018 Logan Cundiff</p>
+      </footer>
+    </div>
+  </body>
+</html>

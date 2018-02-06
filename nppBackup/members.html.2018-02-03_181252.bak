@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CAP 3027 | Defenders of Metropolis</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <!-- <img src=""> -->
+        <div class="logo-img">
+          <div>
+            <img src="img/dofm_logo.png" alt="" width="100" height="100">
+          </div>
+        </div>
+        <div class="logo-text">
+          <h1>DEFENDERS OF METROPOLIS</h1>
+          <h2>Studying Metropolis Light Transport</h2>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="presentation.html">PRESENTATION</a></li>
+          <li><a href="references.html">REFERENCES</a></li>
+          <li><a href="members.html" class="selected">MEMBERS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="members-wrapper">
+      <section>
+      <h1>MEMBER SPOTLIGHT</h1>
+        <p>On November 1st, 2017, five students in Introduction to Digital Arts and Sciences were assembled to study and understand Metropolis Light Transport. We are the Defenders of Metropolis.</p>
+
+        <ul>
+          <li>
+            <h3>Logan Cundiff</h3>
+            <img src="logan.jpg" alt="" class="member-photo">
+            <p>
+              I am a 4th year Digital Arts and Sciences Engineering Major with a minor in Electrical Engineering </br>
+              I am running a marathon next week (or die trying)
+            </p>
+          </li>
+          <li>
+            <h3>Mitchell Joppru</h3>
+            <img src="img/mj1.jpg" alt="" class="member-photo">
+            <p>
+              Fourth-year computer engineering student with experience in machine learning and statistical analytics software for banking.</br>
+               Enjoys unicycling, horseback riding, and gaming.
+            </p>
+          </li>
+          <li>
+            <h3>Michael Levecque</h3>
+            <img src="img/ml.jpg" alt="" class="member-photo">
+            <p>
+              Commissioned Artist/Painter and 4th-year Digital Arts and Sciences Engineering Major</br>
+              Personal mantra: If you ain't first, your last.
+            </p>
+          </li>
+          <li>
+            <h3>Logan Peck</h3>
+            <img src="img/lp.jpg" alt="" class="member-photo">
+            <p>
+              Photographer and 4th-year Digital Arts and Sciences Engineering Major at the University of Florida </br>
+              Logan enjoys finding any place to insert a Star Wars Reference
+            </p>
+          </li>
+          <li>
+            <h3>Jonathan Pereyra</h3>
+            <img src="img/jp.jpg" alt="" class="member-photo">
+            <p>
+              4th Year Digital Arts and Sciences Engineering Major</br>
+              Jonathan enjoys full-stack development on iOS and graphic design. He's watched The Office five times.
+            </p>
+          </li>
+        </ul>
+
+
+      </section>
+
+      <footer>
+        <p>&copy; 2017 Defenders of Metropolis</p>
+      </footer>
+    </div>
+  </body>
+</html>

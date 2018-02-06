@@ -1,0 +1,111 @@
+<html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HCI</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="jquery-3.1.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" type="text/css" href="styles/interface.css" />
+	<script src="api/translation.js"></script>
+  
+  </head>
+  <body>
+  <style>
+
+.button {
+    background-color: #03507e; /* Bluish */	
+    border: none;
+    color: #FFFFFF;
+	margin-top:5em; 
+	border-radius: 12px;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+	
+ }
+.button2 { padding: 20px 40px;} 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+  </style>
+    <header>
+      <a href="index.html" id="logo">
+        <!-- <img src=""> -->
+        <div class="logo-img">
+          <div>
+            <img src="img/gator2.png" alt="" width="90" height="90">
+          </div>
+        </div>
+        <div class="logo-text">
+		  <title>Translator Gator</title>
+          <h1>Translator Gator</h1>
+          <h2>Helping Students translate</h2>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a style="margin-right:40em;" href="index.html">HOME</a></li>
+          <li><a href="presentation.html" class="selected">Translate</a></li>
+          <li><a href="members.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+	</head>
+
+        
+   	<!-- User 1 -->
+        <center>
+		<div id='from'>
+			<label id='fromLabel'>User 1 Language: </label>
+			<input class='showLanguage' id='fromLang' type='text'  placeholder="Detected automatically!"disabled/>
+		</div>
+		
+		<div id='to'>
+			<label id='toLabel'>Choose User 2's Language: </label>
+			<select class='showLanguage' id='toLanguageSelect' onchange='translate()'></select>
+		</div>
+		
+		<br><br>
+		<section id="presentation-primary">
+			<label class='helpText' id='languageAvailableText'>  </label>
+			<br/>
+			<textarea class="toBeTranslated" id="srcTextArea" cols="40" rows="5" onkeyup='detect()' onchange='detect()' onmouseover='detect()' placeholder="Type a message here."></textarea>
+		</section>	
+		<section id="presentation-secondary">
+			<textarea class="translated" id="destTextArea" cols="40" rows="5" placeholder="See translated message here." disabled></textarea>
+        </section>	
+		<section id="presentation-middle">
+        <input id='translateButton' type='button' value='Translate' onClick="translate()"/>
+		</section>
+		</center>
+        
+            <br><br>
+    
+<!-- User 2 -->
+    <iframe src="user2.html" scrolling="no" width="100%" height="780" align="middle"></iframe>
+
+	<center>
+      <div>              
+          <a href="https://ufl.qualtrics.com/SE/?SID=SV_eW3gInqOUcSzB8V"><button class="button" type="submit">COMPLETE INTERACTION</button></a>
+      </div>
+	</center> 
+    <br><br>
+    <script src="https://maps.googleapis.com/maps/api/js?key=9e99fa58cb744cc6b47f9081829f025b&libraries=places&callback=initAutocomplete"
+         async defer></script>  
+	<footer>
+        <p>&copy; 2018 Translator Gator</p>
+    </footer>
+        
+        <!-- End of Person B -->
+	</body>
+</html>
+

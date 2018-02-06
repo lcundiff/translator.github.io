@@ -1,0 +1,31 @@
+ <html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles/interface.css" />
+		<script src="api/translation.js"></script>
+		<style type="text/css">body{overflow-y: hidden;}</style>
+	</head>
+
+  <center>
+		<div id='from'>
+			<label id='fromLabel'>Friend's Language: </label>
+			<input class='showLanguage' id='fromLang' type='text' disabled placeholder="Detected automatically!"/>
+		</div>
+		
+		<div id='to'>
+			<label id='toLabel'>Choose Your Language: </label>
+			<select class='showLanguage' id='toLanguageSelect' onchange='translate()'></select>
+		</div>
+		
+		
+		<br />
+		
+		
+		<label class='helpText' id='languageAvailableText'>  </label>
+		<br/>
+		<textarea class="toBeTranslated" id="srcTextArea" cols="40" rows="5" onkeyup='detect()' onchange='detect()' onmouseover='detect()' placeholder="Type a message here."></textarea>
+		<textarea class="translated" id="destTextArea" cols="40" rows="5" placeholder="See translated message here." disabled></textarea>
+        
+        <br>
+        <input id='translateButton' type='button' value='Translate' onclick='translate()'/>
+		</center>
+		</html>

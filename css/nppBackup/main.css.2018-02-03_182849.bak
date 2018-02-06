@@ -1,0 +1,256 @@
+/**********************************
+GENERAL
+***********************************/
+
+h1, h2 {
+  font-family: 'Work Sans', sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
+#home-wrapper,
+#presentation-wrapper,
+#references-wrapper,
+#members-wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h3 {
+  margin: 0 0 1em 0;
+}
+
+/**********************************
+HEADING
+***********************************/
+
+header {
+  float: left;
+  margin: 0 0 30px 0;
+ padding: 10px 0 ;
+  width: 100%;
+}
+
+header a{
+
+}
+.logo-img{
+  display: inline;
+  float: left;
+}
+
+.logo-text{
+  display: block;
+  float: right;
+  margin-left: 15px;
+}
+
+#logo h1 {
+  margin: 15px 0;
+  font-size: 1.75em;
+  font-weight: normal;
+  line-height: 0.8em;
+}
+
+#logo h2 {
+  font-size: 0.75em;
+  margin: -5px 0 0;
+  font-weight: normal;
+}
+
+
+
+/**********************************
+NAVIGATION
+***********************************/
+
+nav {
+  text-align: center;
+  padding: 10px 0;
+  margin: 20px 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+}
+
+nav li {
+  font-family: 'Work Sans', sans-serif;
+  display: inline-block;
+}
+
+nav a {
+  font-weight: 800;
+  padding: 15px 10px;
+}
+
+
+
+/**********************************
+FOOTER
+***********************************/
+
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  clear: both;
+  padding-top: 50px;
+  color: #fff;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+
+
+/**********************************
+PAGE: HOME
+***********************************/
+
+#home-wrapper h1,
+#home-wrapper h2{
+  text-align: center;
+}
+
+.home-wrapper-content{
+  margin: 15px 0;
+}
+
+.home-wrapper-content p {
+  margin: 45px 0;
+}
+
+
+/**********************************
+PAGE: PRESENTATION
+***********************************/
+
+#presentation-wrapper h2{
+  margin-top: 15px;
+  margin-left: 15px;
+  color:  #0450FD;
+}
+
+.presentation-wrapper-content{
+  margin: 45px 0;
+}
+
+#presentation-primary,
+#presentation-primary h2{
+  background:  #FFED78;
+  color: #F4504D;
+}
+#presentation-secondary,
+#presentation-secondary h2{
+  background:  #F4504D;
+  color: #FFED00;
+  text-align:left;
+}
+
+#presentation-wrapper a{
+  color: #000;
+  text-decoration: underline;
+}
+
+/**********************************
+PAGE: REFERENCES
+***********************************/
+
+#references-wrapper a{
+  text-decoration: underline;
+}
+
+
+/**********************************
+PAGE: MEMBERS
+***********************************/
+
+#members-wrapper p{
+  margin: 0;
+}
+
+#members-wrapper li{
+  list-style: none;
+  margin: 45px 0;
+  text-align: center;
+
+}
+
+.member-photo{
+  width: 200px;
+  border-radius: 200px;
+  padding-bottom: 15px;
+}
+
+#members-wrapper h1{
+  font-size: 3em;
+  /*background: #FFED78;
+  padding: 5px 10px;
+  color: #000;*/
+}
+
+#members-wrapper h3{
+  font-size: 2em;
+  background: #FFED78;
+  padding: 5px 10px;
+  color: #000;
+  text-align: center;
+}
+
+/**********************************
+COLORS
+***********************************/
+
+/* site body */
+body {
+  background-color: #090929;
+  color: #fff;
+}
+
+header {
+  background: #0350FF;
+  border-color: #FFFFFF	;
+}
+
+/* nav background on mobile */
+nav {
+  background: #0350FF;
+}
+
+/* logo text */
+h1, h2 {
+  color: #fff;
+}
+
+/* links */
+a {
+  color: #FFF;
+}
+
+/* nav link */
+nav a, nav a:visited {
+  color: #fff;
+}
+
+/* selected nav link */
+nav a.selected, nav a:hover {
+  color: #FFED78;
+}

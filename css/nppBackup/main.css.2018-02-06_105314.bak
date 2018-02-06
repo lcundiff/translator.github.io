@@ -1,0 +1,249 @@
+/**********************************
+GENERAL
+***********************************/
+
+h1, h2 {
+  font-family: 'Work Sans', sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
+#home-wrapper,
+#presentation-wrapper,
+#references-wrapper,
+#members-wrapper {
+  max-width: 1920px;
+  padding: 0 5%;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h3 {
+  margin: 0 0 1em 0;
+}
+
+/**********************************
+HEADING
+***********************************/
+
+header {
+  float: left;
+  margin: 0 0 30px 0;
+ padding: 10px 0 ;
+  width: 100%;
+}
+
+header a{
+
+}
+.logo-img{
+  display: inline;
+  float: left;
+}
+
+.logo-text{
+  display: block;
+  float: right;
+  margin-left: 15px;
+}
+
+#logo h1 {
+  margin: 15px 0;
+  font-size: 1.75em;
+  font-weight: normal;
+  line-height: 0.8em;
+}
+
+#logo h2 {
+  font-size: 0.75em;
+  margin: -5px 0 0;
+  font-weight: normal;
+}
+
+
+
+/**********************************
+NAVIGATION
+***********************************/
+
+nav {
+  text-align: center;
+  padding: 10px 0;
+  margin: 20px 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+}
+
+nav li {
+  font-family: 'Work Sans', sans-serif;
+  display: inline-block;
+}
+
+nav a {
+  font-weight: 800;
+  padding: 15px 10px;
+}
+
+
+
+/**********************************
+FOOTER
+***********************************/
+
+
+
+
+/**********************************
+PAGE: HOME
+***********************************/
+
+#home-wrapper h1,
+#home-wrapper h2{
+  text-align: center;
+}
+
+.home-wrapper-content{
+  margin: 5px 0;
+}
+
+.home-wrapper-content p {
+  margin: 5px 0;
+}
+
+
+/**********************************
+PAGE: PRESENTATION
+***********************************/
+
+#presentation-wrapper h2{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  color:  #0450FD;
+}
+
+.presentation-wrapper-content{
+  margin: 5px 0;
+}
+
+#presentation-primary,
+#presentation-primary h2{
+  background:  #0350FF;
+  padding-top: -10px; 
+  color: #34F04E;
+  text-align:left; 
+  border-radius: 12px;
+}
+#presentation-middle,
+#presentation-middle h2{
+  background:  #0350FF;
+  color: #34F04E;
+  border-radius: 12px;
+  padding-top:50px; 
+  padding-bottom:50px; 
+  width:20%; 
+  margin-top:15px; 
+}
+#presentation-secondary,
+#presentation-secondary h2{
+  background:  #0350FF;
+  color: #FFED00; /* script  word color */ 
+  text-align:right;
+  border-radius: 12px;
+}
+
+#presentation-wrapper a{
+  color: #000;
+  text-decoration: underline;
+}
+
+
+
+/**********************************
+PAGE: About
+***********************************/
+
+#members-wrapper p{
+  margin: 0;
+}
+
+#members-wrapper li{
+  list-style: none;
+  margin: 45px 0;
+  text-align: center;
+
+}
+
+.member-photo{
+  width: 200px;
+  border-radius: 200px;
+  padding-bottom: 15px;
+}
+
+#members-wrapper h1{
+  font-size: 3em;
+  /*background: #FFED78;
+  padding: 5px 10px;
+  color: #000;*/
+}
+
+#members-wrapper h3{
+  font-size: 2em;
+  background: #0350FF;
+  padding: 5px 10px;
+  color: #fff;
+  text-align: center;
+}
+
+/**********************************
+COLORS
+***********************************/
+
+/* site body */
+body {
+  background-color: #090929;
+  color: #fff;
+}
+
+header {
+  background: #0350FF;
+  border-color: #FFFFFF	;
+}
+
+/* nav background on mobile */
+nav {
+  background: #0350FF;
+}
+
+/* logo text */
+h1, h2 {
+  color: #fff;
+}
+
+/* links */
+a {
+  color: #FFF;
+}
+
+/* nav link */
+nav a, nav a:visited {
+  color: #fff;
+}
+
+/* selected nav link */
+nav a.selected, nav a:hover {
+  color: #FFED78;
+}

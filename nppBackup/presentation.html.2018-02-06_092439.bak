@@ -1,0 +1,176 @@
+<html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HCI</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="jquery-3.1.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="stylesheet" type="text/css" href="styles/interface.css" />
+	<script src="api/translation.js"></script>
+  
+  </head>
+  <style>
+  .button {
+    background-color: #03507e; /* Bluish */	
+    border: none;
+    color: #03507e;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+  </style>
+    <body>
+    <header>
+      <a href="index.html" id="logo">
+        <!-- <img src=""> -->
+        <div class="logo-img">
+          <div>
+            <img src="img/gator2.png" alt="" width="90" height="90">
+          </div>
+        </div>
+        <div class="logo-text">
+		  <title>Translator Gator</title>
+          <h1>Translator Gator</h1>
+          <h2>Helping Students translate</h2>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="presentation.html" class="selected">Translate</a></li>
+          <li><a href="members.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+	</head>
+    
+    <table width="60%" border="0" align="center">
+</table>
+
+        
+   	<!-- Person A -->
+        <center>
+		<div id='from'>
+			<label id='fromLabel'>Your Language: </label>
+			<input class='showLanguage' id='fromLang' type='text'  placeholder="Detected automatically!"disabled/>
+		</div>
+		
+		<div id='to'>
+			<label id='toLabel'>Choose Friend's Language: </label>
+			<select class='showLanguage' id='toLanguageSelect' onchange='translate()'></select>
+		</div>
+		
+		<br />
+		
+		<label class='helpText' id='languageAvailableText'>  </label>
+		<br/>
+		<textarea class="toBeTranslated" id="srcTextArea" cols="40" rows="5" onkeyup='detect()' onchange='detect()' onmouseover='detect()' placeholder="Type a message here."></textarea>
+		<textarea class="translated" id="destTextArea" cols="40" rows="5" placeholder="See translated message here." disabled></textarea>
+        
+        <br>
+        <input id='translateButton' type='button' value='Translate' onClick="translate()"/>
+		</center>
+        <!-- End of Person A -->
+            <br><br>
+    
+    <table width="60%" border="0" align="center">
+
+</table>
+
+    <input id='surveyButton' type="button" onClick="location.href='http://google.com';" value="Continue to Survey" />
+
+    <br><br>
+    <script>
+
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 29.644551, lng: -82.355356},
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function(marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function(place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        });
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=9e99fa58cb744cc6b47f9081829f025b&libraries=places&callback=initAutocomplete"
+         async defer></script>  
+		
+        
+        <!-- End of Person B -->
+	</body>
+</html>
+
