@@ -1,40 +1,178 @@
- <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="styles/interface.css" />
-		<script src="api/translation.js"></script>
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/responsive.css">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/normalize.css">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Translator Gator</title>
+   <link href="https://fonts.googleapis.com/css?family=Work+Sans:600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">	
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<link rel="stylesheet" type="text/css" href="styles/interface.css" />
+  <script src="jquery-3.1.1.min.js"></script>
 
-		<script src="jquery-3.1.1.min.js"></script>
-		
-		<style type="text/css">body{overflow-y: hidden;}</style>
-	</head>
+  
+</head>
 
-  <center>
-        <center>
-		<div id='from'>
-			<label id='fromLabel'>User 2 Language: </label>
-			<input class='showLanguage' id='fromLang' type='text'  placeholder="Detected automatically!"disabled/>
-		</div>
-		
-		<div id='to'>
-			<label id='toLabel'>Choose User 1's Language: </label>
-			<select class='showLanguage' id='toLanguageSelect' onchange='translate()'></select>
-		</div>
-		
-		<br><br>
-		<section id="presentation-primary">
-			<label class='helpText' id='languageAvailableText'>  </label>
-			<br/>
-			<textarea class="toBeTranslated" id="srcTextArea" cols="40" rows="5" onkeyup='detect()' onchange='detect()' onmouseover='detect()' placeholder="Type a message here."></textarea>
-		</section>	
+<body>
+	<center> 
+		<p id="failure">Oopsie...message not sent.</p>  
+		<p id="success">Your message was sent successfully. Thank you!</p>
+
+      <div id="from" >            
+	  
+          <label for="lang1">
+          <label id='fromLabel'>Choose User 2's Language: </label>
+            <select style="	display: inline-block;
+				border-style:ridge;
+				border-width:2px;
+				background-color:#FFF;
+				width:200px;
+				height:28px; 
+				border-radius:4px;"
+			id="lang1">   
+			  <option value="en">English</option>
+              <option value="cs">Czech</option>
+              <option value="de">German</option>
+              <option value="et">Estonian</option>
+              <option value="fi">Finnish</option>
+              <option value="fr">French</option>
+              <option value="nl">Dutch</option>
+              <option value="el">Greek</option>
+              <option value="he">Hebrew</option>
+              <option value="ht">Haitian Creole</option>
+              <option value="hu">Hungarian</option>
+              <option value="id">Indonesian</option>
+              <option value="it">Italian</option>
+              <option value="ja">Japanese</option>
+              <option value="lv">Latvian</option>
+              <option value="no">Norwegian</option>
+              <option value="pl">Polish</option>
+              <option value="pt">Portuguesse</option>
+              <option value="ro">Romanian</option>
+              <option value="es">Spanish</option>
+              <option value="ru">Russian</option>
+              <option value="sk">Slovak</option>
+              <option value="sv">Swedish</option>
+              <option value="th">Thai</option>
+              <option value="tr">Turkish</option>
+              <option value="uk">Ukrainian</option>
+              <option value="vi">Vietnamese</option>
+              <option value="zh-CHS">Simplified Chinese</option>
+              <option value="zh-CHT">Traditional Chinese</option>
+            </select>
+          </label>
+      </div>
+	  <!-- lang selector -->
+      <div id="to" >             
+          <label for="lang2">
+          <label id='toLabel'>Choose User 1's Language: </label>
+            <select style="	display: inline-block;
+				border-style:ridge;
+				border-width:2px;
+				background-color:#FFF;
+				width:200px;
+				height:28px; 
+				border-radius:4px;"
+			id="lang2">    
+              <option value="cs">Czech</option>
+              <option value="de">German</option>
+              <option value="en">English</option>
+              <option value="et">Estonian</option>
+              <option value="fi">Finnish</option>
+              <option value="fr">French</option>
+              <option value="nl">Dutch</option>
+              <option value="el">Greek</option>
+              <option value="he">Hebrew</option>
+              <option value="ht">Haitian Creole</option>
+              <option value="hu">Hungarian</option>
+              <option value="id">Indonesian</option>
+              <option value="it">Italian</option>
+              <option value="ja">Japanese</option>
+              <option value="lv">Latvian</option>
+              <option value="no">Norwegian</option>
+              <option value="pl">Polish</option>
+              <option value="pt">Portuguesse</option>
+              <option value="ro">Romanian</option>
+              <option value="es">Spanish</option>
+              <option value="ru">Russian</option>
+              <option value="sk">Slovak</option>
+              <option value="sv">Swedish</option>
+              <option value="th">Thai</option>
+              <option value="tr">Turkish</option>
+              <option value="uk">Ukrainian</option>
+              <option value="vi">Vietnamese</option>
+              <option value="zh-CHS">Simplified Chinese</option>
+              <option value="zh-CHT">Traditional Chinese</option>
+            </select>
+          </label>
+      </div>
+	  <br>	 
+	  <br> 	  
+	  	<section id="presentation-primary">
+			<label for="message" class='helpText' id='languageAvailableText'>  </label>
+			<span style="margin-left:-25px; padding-top:15px;" >Gator 2 Message: </span> 
+			<br>
+			<textarea class="toBeTranslated" name="message" id="message" onkeyup='detect()' onchange='detect()' onmouseover='detect()' placeholder="Type a message here."></textarea>
+			</label> 
+		</section>		 	
+		<!-- translated message --> 
 		<section id="presentation-secondary">
-			<textarea class="translated" id="destTextArea" cols="40" rows="5" placeholder="See translated message here." disabled></textarea>
-        </section>	
+		<span style="float:left; margin-left:6em; padding-top:15px;" >Gator 2 Translated Message: </span>
+		<div class="container" id="translation-wrapper" style="margin-top:15px;">
+			<section id="presentation-white">
+			<p style="margin-top:-10px;" class="translation" > </p>
+			</section>	<!-- end of white -->
+		</div> 
+		<p></p>
+		</section>	<!-- end of blue --> 
+		<!-- middle --> 
 		<section id="presentation-middle">
-        <input id='translateButton' type='button' value='Translate' onClick="translate()"/>
-		</section>
-		</center>
-		</html>
+		      <button style="	border-style:ridge;
+				border-radius: 8px;
+				background-color:#fee050;
+				border-width:2px;
+				width:180px;
+				height:40px;
+				font:'Myriad Pro';
+				font-weight:bold;
+				font-size:14px;" 
+			  name="submit" type="submit" id="submit">Translate</button> 		</section>
+		</center>			
+			<div>		           
+		  </form>
+      <p></p>
+  <script src="https://www.microsoftTranslator.com/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**" type="text/javascript"></script>
+    <script type="text/javascript">
+      $('#submit').on('click touchstart', function(){
+        var lang1 = $('#lang1').val().toString();
+        var firstLang = $('#lang1').find(":selected").text();
+        var lang2 = $('#lang2').val().toString();
+        var secondLang = $('#lang2').find(":selected").text();
+        $('#translation-wrapper');
+        $('.translation:last-child').text($('#message').val());
+        Microsoft.Translator.Widget.Translate(lang1, lang2);
+        Microsoft.Translator.Widget.domTranslator.showHighlight = false;
+        Microsoft.Translator.Widget.domTranslator.showTooltips = false;
+        $('#lang1').val(lang2);
+        $('#lang2').val(lang1);	
+        $('#message').val("");
+      return false;
+      });
+  </script>
+  <style>
+  #WidgetFloaterPanels {
+    left: 0 !Important;
+    display: none !important;
+  }
+  </style>
+
+
+
+  
+  
+</body>
+</html>

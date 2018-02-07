@@ -28,9 +28,6 @@ img {
   max-width: 100%;
 }
 
-h3 {
-  margin: 0 0 1em 0;
-}
 
 /**********************************
 HEADING
@@ -126,7 +123,7 @@ PAGE: HOME
 
 
 /**********************************
-PAGE: PRESENTATION
+PAGE: translator
 ***********************************/
 
 #presentation-wrapper h2{
@@ -145,14 +142,15 @@ PAGE: PRESENTATION
   color: #34F04E;
   text-align:left; 
   border-radius: 12px;
+  padding-top:13px;
 }
 #presentation-middle,
 #presentation-middle h2{
   background:  #0350FF;
   color: #34F04E;
   border-radius: 12px;
-  padding-top:50px; 
-  padding-bottom:50px; 
+  padding-top:90px; 
+  padding-bottom:70px; 
   width:20%; 
   margin-top:15px; 
 }
@@ -161,7 +159,28 @@ PAGE: PRESENTATION
   background:  #0350FF;
   color: #FFED00; /* script  word color */ 
   text-align:right;
+  /*padding-top:10px;*/
   border-radius: 12px;
+}
+
+#presentation-white,
+#presentation-white h2{
+  background:  #ffffff;
+  color: #555555; /* script  word color */ 
+  text-align:left;
+  /*padding-top:10px;*/
+  border-radius: 12px;
+  	border-style:ridge;
+	border-width:2px;
+	border-radius: 10px;
+	border-color:#F8F8F8;
+	width:420px;
+	float:right;
+	height:85px;
+	margin-right:2.6em;
+	margin-bottom:1.6em;
+	margin-top:0.6em;
+	padding: 20px;
 }
 
 #presentation-wrapper a{

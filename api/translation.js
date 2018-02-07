@@ -6,8 +6,6 @@
 	All code and variable declarations can be found at:
 	https://msdn.microsoft.com/en-us/library/ff512421.aspx
 
-	For personal use, I have modified some methods and comments 
-	to be applied to the project's use case.
 */
 
 // local variables for web interface
@@ -19,14 +17,14 @@ var codeToLanguage = {};
 var languageToCode = {};
 
 // Initiate handshake with API
-function callAPI(api)
-{
+function callAPI(api){
+	
 	var scriptcall = document.createElement("script");
 	scriptcall.type = 'text/javascript';
 	scriptcall.src = api;
 	document.getElementsByTagName("head")[0].appendChild(scriptcall);
+	
 }
-
 
 function onTranslate(message)
 {

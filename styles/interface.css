@@ -12,7 +12,8 @@
 	border-style:ridge;
 	border-width:2px;
 	background-color:#FFF;
-	width:150px;
+	width:200px;
+	height:28px; 
 	border-radius:4px;
 	
 }
@@ -38,27 +39,6 @@
 	font-size:14px;
 }
 
-#surveyButton{
-	border-style:ridge;
-	border-radius: 8px;
-	background-color: #0F0;
-	border-width:2px;
-	width:250px;
-	height:60px;
-	/*margin-left:100px;
-	margin-bottom:20px;*/
-	font:"Myriad Pro";
-	/*font-family:Tahoma, Geneva, sans-serif;*/
-	font-weight:bold;
-	font-size:14px;
-}
-
-#hline{
-	color: #fee050;
-	background-color: #fee050;
-	height: 1px;
-	width:60%;
-}
 
 .helpText{
 	margin-left:50px;
@@ -69,9 +49,12 @@
 	border-width:2px;
 	border-radius: 10px;
 	border-color:#F8F8F8;
-	width:400px;
-	height:100px;
-	margin:1.5em;
+	width:420px;
+	float:left;
+	height:85px;
+	margin-left:1.6em;
+	margin-bottom:1.6em;
+	margin-top:1.2em;
 	padding: 20px;
 }
 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+   <link href="https://fonts.googleapis.com/css?family=Work+Sans:600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">	
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<link rel="stylesheet" type="text/css" href="styles/interface.css" />
+  <script src="jquery-3.1.1.min.js"></script>
+
+  
+</head>
+
+<body>
+		<label for="lang1">
+            <select id="lang1">   
+              <option value="en">English</option>
+            </select>
+          </label>
+		<label for="lang2">
+            <select id="lang2">   
+              <option value="es">Spanish</option>
+            </select>
+          </label>
+		  
+		<!-- translated message within iframe --> 
+		<section id="presentation-secondary">
+		<span  style="" >Gator 2 Translated Message: </button>
+		<div class="container" id="translation-wrapper" style="margin-top:15px;">
+			<br>
+			<section id="presentation-white">
+			<p class="translation" > </p>
+			</section>	<!-- end of white -->
+			<p></p>
+		</div> 
+		</section>	<!-- end of blue --> 
+		<!-- middle --> 
+		<section id="presentation-middle">
+		      <button style="	border-style:ridge;
+				border-radius: 8px;
+				background-color:#fee050;
+				border-width:2px;
+				width:180px;
+				height:40px;
+				font:'Myriad Pro';
+				font-weight:bold;
+				font-size:14px;" 
+			  name="submit" type="submit" id="trans">Translate</button> 		
+		</section>
+		</center>	
+	  
+	<script src="https://www.microsoftTranslator.com/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**" type="text/javascript"></script>
+
+	<script type="text/javascript">
+      $('#trans').on('click touchstart', function(){
+		var lang1 = decodeURIComponent(window.location.search);
+		var lang2 = decodeURIComponent(window.location.search);
+		var lang1 = $('#lang1').val().toString();
+        var firstLang = $('#lang1').find(":selected").text();
+        var lang2 = $('#lang2').val().toString();
+        var secondLang = $('#lang2').find(":selected").text();
+
+        Microsoft.Translator.Widget.Translate(lang1, lang2);
+        Microsoft.Translator.Widget.domTranslator.showHighlight = false;
+        Microsoft.Translator.Widget.domTranslator.showTooltips = false;
+      return false;
+      });
+  </script>
+  
+  <style>
+  #WidgetFloaterPanels {
+    left: 0 !Important;
+    display: none !important;
+  }
+  </style>
+
+
+
+  
+  
+</body>
+</html>

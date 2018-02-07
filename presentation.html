@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>HCI</title>
+    <title>Translator Gator</title>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
@@ -35,7 +35,7 @@
 	
  }
 .button2 { padding: 20px 40px;} 
-.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button4 {background-color: #0350FF; margin:5px; color: #fee050;} /* yellow */ 
 .button5 {background-color: #555555;} /* Black */
   </style>
     <header>
@@ -60,53 +60,34 @@
         </ul>
       </nav>
     </header>
-	</head>
-
-        
-   	<!-- User 1 -->
-        <center>
-		<div id='from'>
-			<label id='fromLabel'>User 1 Language: </label>
-			<input class='showLanguage' id='fromLang' type='text'  placeholder="Detected automatically!"disabled/>
-		</div>
-		
-		<div id='to'>
-			<label id='toLabel'>Choose User 2's Language: </label>
-			<select class='showLanguage' id='toLanguageSelect' onchange='translate()'></select>
-		</div>
-		
-		<br><br>
-		<section id="presentation-primary">
-			<label class='helpText' id='languageAvailableText'>  </label>
-			<br/>
-			<textarea class="toBeTranslated" id="srcTextArea" cols="40" rows="5" onkeyup='detect()' onchange='detect()' onmouseover='detect()' placeholder="Type a message here."></textarea>
-		</section>	
-		<section id="presentation-secondary">
-			<textarea class="translated" id="destTextArea" cols="40" rows="5" placeholder="See translated message here." disabled></textarea>
-        </section>	
-		<section id="presentation-middle">
-        <input id='translateButton' type='button' value='Translate' onClick="translate()"/>
-		</section>
-		</center>
-        
-            <br><br>
-			<center>
-			        <text>If an alternative keyboard is needed for input please go <button style="background-color:black;" class="button4"><a href="http://gate2home.com/" target="_blank">here</a></button> and copy your input, then paste it here in the message area.</text> 
-			</center>
+	</head> 
+   	<!-- User 1 -->     
+	<center>
+	        <h3 style="color:#34F04E" >The following is the manual version of Translator Gator</h3> 
+			<text > Auto detect and some other Microsoft API did not work when hosted on website. Local version has auto detect.</text> 
+			<br>
 			<br>
 			
-    
+			<text>Alternative keyboard:   <button style="" class="button4"><a href="http://gate2home.com/" target="_blank">Click Here</a></button> copy your input --> paste it in the message area.</text> 
+			</center>
+			<br>
+			 <hr>
+			<center>
+			<h3 style="color:#34F04E" >Instructions:</h3> 
+			<text >First user picks language and types message. Website will translate and second user will enter in message.<text> 
+			<br> <br>
+			
+			</center> 
+			
 <!-- User 2 -->
-    <iframe src="user2.html" scrolling="no" width="100%" height="780" align="middle"></iframe>
-
+    <iframe frameBorder="0" src="user2.html" scrolling="no" width="100%" height="310" align="middle"></iframe>
 	<center>
       <div>              
-          <a href="https://ufl.qualtrics.com/SE/?SID=SV_eW3gInqOUcSzB8V"><button class="button" type="submit">COMPLETE INTERACTION</button></a>
+          <a stye="margin-bottom:35em;" href="https://ufl.qualtrics.com/SE/?SID=SV_eW3gInqOUcSzB8V"><button class="button" type="submit">COMPLETE INTERACTION</button></a>
       </div>
 	</center> 
     <br><br>
-    <script src="https://maps.googleapis.com/maps/api/js?key=9e99fa58cb744cc6b47f9081829f025b&libraries=places&callback=initAutocomplete"
-         async defer></script>  
+
 	<footer>
         <p>&copy; 2018 Translator Gator</p>
     </footer>
